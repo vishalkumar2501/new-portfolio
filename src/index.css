@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #0C0C0C;
+    --card-dark: #121212;
+    --card-surface: #161616;
+    --border-subtle: #222222;
+    --border-hover: #383838;
+    --accent-purple: #B600A8;
+    --accent-violet: #7621B0;
+    --accent-orange: #BE4C00;
+    --font-kanit: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-inter);
+    background-color: var(--bg-dark);
+    color: #EDEDED;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0C0C0C;
+    overflow-x: hidden;
+    position: relative;
+    user-select: none;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Text selection */
+  ::selection {
+    background: rgba(182, 0, 168, 0.35);
+    color: #ffffff;
+  }
+}
+
+/* Lenis Smooth Scroll Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Typography styles */
+.font-kanit {
+  font-family: var(--font-kanit);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Heading Gradient */
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-heading-glow {
+  background: linear-gradient(180deg, #8A92A0 0%, #E6F1F8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 35px rgba(187, 204, 215, 0.15));
+}
+
+/* Contact Button Signature Gradient */
+.contact-btn-gradient {
+  background: linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%);
+  background-size: 200% 200%;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-btn-gradient:hover {
+  background-position: right center;
+  box-shadow: 0 0 30px rgba(182, 0, 168, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(22, 22, 22, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-contrast {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Subtle grid background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0);
+}
+
+/* Hardware accelerated classes */
+.gpu-accel {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Animated subtle side beam lines */
+@keyframes beam-down {
+  0% {
+    top: -20%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 120%;
+    opacity: 0;
+  }
+}
+
+.side-beam-line {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.08) 30%, rgba(255, 255, 255, 0.08) 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 35;
+}
+
+.side-beam-glow {
+  position: absolute;
+  left: -1px;
+  width: 3px;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, #B600A8, #7621B0, transparent);
+  animation: beam-down 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  box-shadow: 0 0 15px rgba(182, 0, 168, 0.6);
+}
+
+.side-beam-glow-delayed {
+  position: absolute;
+  right: -1px;
+  width: 3px;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, #7621B0, #BE4C00, transparent);
+  animation: beam-down 6s cubic-bezier(0.4, 0, 0.2, 1) 3s infinite;
+  box-shadow: 0 0 15px rgba(118, 33, 176, 0.6);
+}
