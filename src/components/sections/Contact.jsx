@@ -102,34 +102,33 @@ export default function Contact({ selectedService, onOpenScheduleModal }) {
   };
 
   return (
-    <section id="contact" className="pt-14 sm:pt-20 pb-8 relative bg-[#0C0C0C] overflow-hidden">
+    <section id="contact" className="pt-10 sm:pt-14 pb-6 relative bg-[#0C0C0C] overflow-hidden">
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[550px] h-[550px] bg-[#B600A8]/12 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[450px] h-[450px] bg-[#B600A8]/10 rounded-full blur-[130px] pointer-events-none -z-10" />
 
-      {/* 75% Laptop Screen Container */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-xl mx-auto mb-8">
           <FadeIn direction="up">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-2">
               <Sparkles className="w-3.5 h-3.5 text-[#B600A8]" />
-              <span className="text-xs font-mono tracking-wider text-zinc-300 uppercase font-semibold">
+              <span className="text-[11px] font-mono tracking-wider text-zinc-300 uppercase font-semibold">
                 Available for New Projects & Roles
               </span>
             </div>
-            <h2 className="hero-heading font-kanit font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight">
+            <h2 className="hero-heading font-kanit font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight">
               GET IN TOUCH
             </h2>
           </FadeIn>
         </div>
 
         {/* Contact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 mb-8 sm:mb-10">
           {/* Left Column: Direct Actions */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
-            <FadeIn direction="right" delay={0.1}>
-              <div className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#141414] border border-white/10 shadow-xl space-y-3.5">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-kanit font-extrabold text-white tracking-tight">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-3">
+            <FadeIn direction="right" delay={0.08}>
+              <div className="p-3.5 sm:p-5 rounded-2xl bg-[#141414] border border-white/10 shadow-xl space-y-3">
+                <h3 className="text-base sm:text-lg font-kanit font-extrabold text-white tracking-tight">
                   Direct Communication
                 </h3>
 
@@ -342,8 +341,8 @@ export default function Contact({ selectedService, onOpenScheduleModal }) {
         {/* Giant Watermark & Footer with White Transparent Light Hover Effect */}
         <div className="pt-10 pb-6 border-t border-white/10 relative text-center overflow-hidden">
           {/* Giant full-size "VISHAL" watermark */}
-          <div className="relative group/watermark inline-block cursor-default py-2 max-w-full">
-            <span className="text-[16vw] sm:text-[18vw] lg:text-[20vw] font-kanit font-black tracking-tighter uppercase leading-none select-none text-white/[0.04] group-hover/watermark:text-white/[0.18] transition-all duration-700 block filter group-hover/watermark:drop-shadow-[0_0_40px_rgba(255,255,255,0.45)]">
+          <div className="relative group/watermark inline-block cursor-default py-1 max-w-full">
+            <span className="text-[9vw] sm:text-[11vw] lg:text-[12vw] font-kanit font-black tracking-tighter uppercase leading-none select-none text-white/[0.04] group-hover/watermark:text-white/[0.18] transition-all duration-700 block filter group-hover/watermark:drop-shadow-[0_0_40px_rgba(255,255,255,0.45)]">
               VISHAL
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/watermark:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl blur-md" />

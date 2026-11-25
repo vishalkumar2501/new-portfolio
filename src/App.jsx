@@ -41,29 +41,42 @@ function App() {
 
       {/* Main Content Layout */}
       <main className="relative w-full min-h-screen bg-[#0C0C0C] text-[#EDEDED] font-sans antialiased overflow-x-hidden">
-        {/* Hero Section */}
-        <Hero onOpenScheduleModal={handleOpenScheduleModal} />
+        {/* Central Framed Portfolio Container with Side Animated Lines */}
+        <div className="relative max-w-[1100px] mx-auto border-x border-white/[0.08] bg-[#0C0C0C] shadow-[0_0_80px_rgba(0,0,0,0.95)]">
+          {/* Left Animated Glowing Beam / Line */}
+          <div className="absolute -left-[1px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent pointer-events-none z-30">
+            <div className="side-beam-glow" />
+          </div>
 
-        {/* Complete Visible Tech Stack */}
-        <SkillsMarquee />
+          {/* Right Animated Glowing Beam / Line */}
+          <div className="absolute -right-[1px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent pointer-events-none z-30">
+            <div className="side-beam-glow-delayed" />
+          </div>
 
-        {/* About & Coding Profiles Section */}
-        <About />
+          {/* Hero Section */}
+          <Hero onOpenScheduleModal={handleOpenScheduleModal} />
 
-        {/* Experience & Education Timeline */}
-        <Experience />
+          {/* Complete Visible Tech Stack */}
+          <SkillsMarquee />
 
-        {/* Services Section */}
-        <Services onSelectService={handleSelectService} />
+          {/* About & Coding Profiles Section */}
+          <About />
 
-        {/* Featured Projects (3D Sticky Stacking Cards) */}
-        <Projects />
+          {/* Experience & Education Timeline */}
+          <Experience />
 
-        {/* Contact Section & Giant VISHAL Watermark */}
-        <Contact
-          selectedService={selectedService}
-          onOpenScheduleModal={handleOpenScheduleModal}
-        />
+          {/* Services Section */}
+          <Services onSelectService={handleSelectService} />
+
+          {/* Featured Projects (3D Sticky Stacking Cards) */}
+          <Projects />
+
+          {/* Contact Section & Giant VISHAL Watermark */}
+          <Contact
+            selectedService={selectedService}
+            onOpenScheduleModal={handleOpenScheduleModal}
+          />
+        </div>
       </main>
 
       {/* Interactive Schedule Call Modal */}

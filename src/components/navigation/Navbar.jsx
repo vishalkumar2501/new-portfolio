@@ -42,13 +42,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-8 md:px-12 lg:px-16 py-3.5 sm:py-5 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3.5 ${
           isScrolled
-            ? 'backdrop-blur-xl bg-[#0C0C0C]/85 border-b border-white/10 shadow-2xl py-3 sm:py-4'
+            ? 'backdrop-blur-xl bg-[#0C0C0C]/85 border-b border-white/10 shadow-2xl py-2.5 sm:py-3'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
+        <div className="max-w-[1100px] mx-auto flex items-center justify-between">
           {/* Brand Logo */}
           <Magnet padding={60} strength={2}>
             <a
