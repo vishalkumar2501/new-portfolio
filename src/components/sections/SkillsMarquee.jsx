@@ -310,9 +310,9 @@ export default function SkillsMarquee() {
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[300px] bg-gradient-to-r from-[#B600A8]/10 via-[#7621B0]/10 to-transparent rounded-full blur-[120px] pointer-events-none -z-10" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="max-w-full px-4 sm:px-6 md:px-8">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+        <div className="mb-6 space-y-3.5">
           <div>
             <FadeIn direction="up">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-2">
@@ -327,14 +327,14 @@ export default function SkillsMarquee() {
             </FadeIn>
           </div>
 
-          {/* Category Filter Pills */}
-          <FadeIn direction="up" delay={0.1}>
-            <div className="flex overflow-x-auto no-scrollbar gap-1 p-1 rounded-xl bg-[#141414] border border-white/10 max-w-full">
+          {/* Category Filter Pills (Wrapping cleanly within container bounds - zero overflow) */}
+          <FadeIn direction="up" delay={0.08}>
+            <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-[#141414] border border-white/10 w-full">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-2.5 py-1 rounded-lg text-[11px] font-kanit font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-xl text-[11px] font-kanit font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     activeCategory === cat
                       ? 'bg-gradient-to-r from-[#B600A8] to-[#7621B0] text-white shadow-md'
                       : 'text-zinc-400 hover:text-white hover:bg-white/5'

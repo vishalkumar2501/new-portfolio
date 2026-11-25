@@ -73,7 +73,7 @@ export default function Hero({ onOpenScheduleModal }) {
   return (
     <section className="relative min-h-[85vh] w-full flex flex-col justify-between pt-20 sm:pt-24 md:pt-26 pb-8 sm:pb-10 px-4 sm:px-6 md:px-8 overflow-hidden select-none">
       {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-[#B600A8]/12 via-[#7621B0]/8 to-transparent rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-gradient-to-br from-[#B600A8]/14 via-[#7621B0]/10 to-transparent rounded-full blur-[130px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 left-10 w-[280px] h-[280px] bg-[#646973]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
       <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-[#BE4C00]/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
@@ -115,20 +115,20 @@ export default function Hero({ onOpenScheduleModal }) {
           onMouseLeave={handleMouseLeave}
           className="relative my-auto flex flex-col items-center justify-center text-center py-4 sm:py-6 md:py-8 w-full cursor-crosshair"
         >
-          {/* Hero Text (Sleek Compact Size) */}
+          {/* Hero Text */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
-            className="hero-heading font-kanit font-black tracking-tighter uppercase text-center leading-[0.92] text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] xl:text-[6.2rem] drop-shadow-2xl pointer-events-none"
+            className="hero-heading font-kanit font-black tracking-tighter uppercase text-center leading-[0.92] text-5xl sm:text-6xl md:text-7xl lg:text-[5.8rem] xl:text-[6.8rem] drop-shadow-2xl pointer-events-none"
           >
             HI, I'M VISHAL
           </motion.h1>
 
-          {/* Dynamic 3D Magnetic Avatar */}
+          {/* Dynamic 3D Magnetic Avatar (Medium Level - perfectly balanced) */}
           <motion.div
             style={{ x: avatarX, y: avatarY }}
-            className="relative -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-14 z-20 pointer-events-auto"
+            className="relative -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 z-20 pointer-events-auto"
           >
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
@@ -144,11 +144,11 @@ export default function Hero({ onOpenScheduleModal }) {
             >
               {/* Dynamic Chromatic Aura */}
               <div
-                className={`absolute -inset-4 sm:-inset-5 bg-gradient-to-r ${getAuraGradient()} rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-all duration-700 animate-pulse`}
+                className={`absolute -inset-5 sm:-inset-7 bg-gradient-to-r ${getAuraGradient()} rounded-full blur-2xl opacity-80 group-hover:opacity-100 transition-all duration-700 animate-pulse`}
               />
 
-              {/* Avatar Container */}
-              <div className="relative w-22 h-22 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full p-1.5 bg-gradient-to-b from-white/40 via-white/10 to-[#141414] border-2 border-white/30 shadow-[0_0_35px_rgba(182,0,168,0.35)] overflow-hidden backdrop-blur-xl">
+              {/* Avatar Container (Medium Level ~ 192px on lg) */}
+              <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full p-2 bg-gradient-to-b from-white/40 via-white/10 to-[#141414] border-2 border-white/30 shadow-[0_0_40px_rgba(182,0,168,0.4)] overflow-hidden backdrop-blur-xl">
                 <img
                   src={avatarImg}
                   alt="Vishal Kumar Avatar"
@@ -160,9 +160,9 @@ export default function Hero({ onOpenScheduleModal }) {
               <motion.div
                 animate={{ y: [-2, 2, -2] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -bottom-1 -right-1 bg-[#121212] border border-white/25 text-[10px] sm:text-[11px] font-mono font-bold text-white px-2 sm:px-2.5 py-0.5 rounded-full shadow-2xl flex items-center gap-1"
+                className="absolute -bottom-1 -right-1 bg-[#121212] border border-white/25 text-[11px] sm:text-xs font-mono font-bold text-white px-2.5 sm:px-3 py-1 rounded-full shadow-2xl flex items-center gap-1.5"
               >
-                <Sparkles className="w-2.5 h-2.5 text-[#B600A8]" />
+                <Sparkles className="w-3 h-3 text-[#B600A8]" />
                 <span>Vishal</span>
               </motion.div>
             </motion.div>
