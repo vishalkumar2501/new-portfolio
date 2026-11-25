@@ -8,50 +8,53 @@ import {
   Palette,
   ArrowRight,
   CheckCircle,
-  Sparkles
+  Sparkles,
+  Server,
+  Cloud,
+  Lock
 } from 'lucide-react';
 import FadeIn from '../motion/FadeIn';
 
 const SERVICES = [
   {
     number: '01',
-    title: 'FULL-STACK DEVELOPMENT',
-    subtitle: 'Web Architecture',
-    desc: 'Modern web applications built with React 19, Next.js, TypeScript, Node.js, and Tailwind CSS. Clean component hierarchies and sub-second load times.',
-    deliverables: ['Custom Next.js & React Apps', 'SSR & Server Components', 'Responsive Interfaces', 'Type-Safe REST APIs'],
-    icon: Code,
+    title: 'DISTRIBUTED BACKEND & SYSTEM DESIGN',
+    subtitle: 'High-Concurrency Core',
+    desc: 'Scalable Node.js & Express 5 microservices, multi-document ACID transactions, Redis distributed locks (SET NX EX), and DAG execution engines designed for extreme resilience.',
+    deliverables: ['Microservices & Event-Driven Systems', 'ACID Transactions & Double-Entry Ledgers', 'Redis Locks & Idempotency Engines', 'HLD/LLD Architecture & Benchmarks'],
+    icon: Server,
   },
   {
     number: '02',
-    title: 'REAL-TIME & WEBSOCKET SYSTEMS',
-    subtitle: 'Event Engines',
-    desc: 'Event-driven real-time communication systems powered by Socket.io. Low-latency bi-directional messaging, room channels, and state sync.',
-    deliverables: ['Real-Time Chat Systems', 'Socket.io Server Architecture', 'Live Presence Indicators', 'Event-Driven Broadcasts'],
-    icon: Zap,
-  },
-  {
-    number: '03',
-    title: 'AI INTEGRATION & AGENTS',
+    title: 'AGENTIC AI & LANGGRAPH SYSTEMS',
     subtitle: 'Autonomous Workflows',
-    desc: 'Production-ready AI integrations: real-time speech transcription, context summarization, automated task extraction pipelines, and LLM API integrations.',
-    deliverables: ['Speech Transcription Pipelines', 'Context-Aware Summaries', 'Task & Action Extraction', 'LLM API Integrations'],
+    desc: 'Production-ready AI systems with LangGraph state machines, Gemini & OpenAI tool calling, RAG pipelines over Qdrant Cloud, and deterministic code guardrails.',
+    deliverables: ['LangGraph State Machine Agents', 'Semantic Search & Vector RAG (Qdrant)', 'Deterministic Code Guardrails', 'Multi-turn Memory Checkpoints'],
     icon: Bot,
   },
   {
+    number: '03',
+    title: 'REAL-TIME & EVENT-DRIVEN WEBSOCKETS',
+    subtitle: 'Low-Latency Streaming',
+    desc: 'Bi-directional real-time communication systems powered by Socket.IO with Redis Pub/Sub adapters, Server-Sent Events (SSE), and live presence heartbeat trackers.',
+    deliverables: ['Socket.IO Redis Pub/Sub Clusters', 'Server-Sent Events (SSE) Streaming', 'Live Heartbeat Presence (sub-70ms)', 'BullMQ Background Worker Queues'],
+    icon: Zap,
+  },
+  {
     number: '04',
-    title: 'BACKEND & DATABASE SCALING',
-    subtitle: 'Server & DB Core',
-    desc: 'Robust Node.js & Express backends paired with PostgreSQL and MongoDB. Optimized database queries, schema modeling, JWT auth, and Razorpay gateways.',
-    deliverables: ['REST API Middleware', 'PostgreSQL & MongoDB Schemas', 'Razorpay Gateway Integrations', 'Docker Deployment'],
-    icon: Database,
+    title: 'CLOUD, DEVOPS & INFRASTRUCTURE',
+    subtitle: 'IaC & Containerization',
+    desc: 'Terraform modules for AWS (ECS Fargate, RDS, ElastiCache, ALB), Docker containerization, Nginx reverse proxy gateway, and GitHub Actions automated CI/CD pipelines.',
+    deliverables: ['AWS Cloud Deployments (ECS/RDS/ElastiCache)', 'Terraform Infrastructure as Code', 'Docker Multi-stage Containerization', 'Automated CI/CD with Jest & Supertest'],
+    icon: Cloud,
   },
   {
     number: '05',
-    title: 'UI/UX & CREATIVE INTERACTION',
-    subtitle: '60fps Magnetic Motion',
-    desc: 'Interactive web experiences with spring physics magnets, GPU-accelerated transforms, smooth scrolling, and tailored design systems.',
-    deliverables: ['Magnetic Cursor Physics', 'Framer Motion Spring Physics', 'Lenis Smooth Momentum Scroll', 'Fluid Typography Systems'],
-    icon: Palette,
+    title: 'FULL-STACK WEB ARCHITECTURE',
+    subtitle: 'Modern React 19 & Next.js',
+    desc: 'Responsive web applications with React 19, Next.js App Router, Tailwind CSS, Zustand, and TanStack Query with sub-second load times and fluid interaction design.',
+    deliverables: ['React 19 & Next.js App Router', 'Type-Safe REST APIs & Webhooks', 'Zustand & TanStack State Management', 'Responsive Tailwind CSS Design Systems'],
+    icon: Code,
   },
 ];
 
@@ -91,7 +94,7 @@ export default function Services({ onSelectService }) {
             </h2>
           </div>
           <p className="text-xs sm:text-sm font-kanit text-zinc-600 max-w-sm">
-            Full-stack systems, real-time socket engines, and AI applications.
+            Distributed backends, agentic AI pipelines, real-time engines, and cloud infrastructure.
           </p>
         </div>
 

@@ -13,143 +13,305 @@ import {
   Workflow,
   Cloud,
   ShieldCheck,
-  CheckCircle2
+  CheckCircle2,
+  Bot,
+  Terminal,
+  Activity,
+  FileCheck
 } from 'lucide-react';
 import FadeIn from '../motion/FadeIn';
 
-// The exact 16 technologies provided by Vishal Kumar
+// Comprehensive technical skill stack from Vishal Kumar's resume & production systems
 const TECH_STACK = [
+  // --- Agentic AI & LLM ---
   {
-    name: 'React',
+    name: 'LangGraph',
+    category: 'Agentic AI & LLM',
+    desc: 'State machines, human-in-the-loop nodes, memory checkpoints, graph agent orchestration',
+    tag: 'Agent Core',
+    color: 'from-purple-500/20 to-indigo-500/10',
+    borderColor: 'hover:border-purple-500/50',
+  },
+  {
+    name: 'RAG & pgvector',
+    category: 'Agentic AI & LLM',
+    desc: 'Vector embeddings, semantic retrieval, hybrid search with Reciprocal Rank Fusion (RRF)',
+    tag: 'Vector Search',
+    color: 'from-indigo-500/20 to-violet-500/10',
+    borderColor: 'hover:border-indigo-500/50',
+  },
+  {
+    name: 'LLM Tool Calling',
+    category: 'Agentic AI & LLM',
+    desc: 'Gemini API & OpenAI tool schemas, automated parameter extraction & business guardrails',
+    tag: 'Tool Calling',
+    color: 'from-pink-500/20 to-purple-500/10',
+    borderColor: 'hover:border-pink-500/50',
+  },
+  {
+    name: 'Qdrant Cloud',
+    category: 'Agentic AI & LLM',
+    desc: 'High-dimensional vector DB, 768-dim embeddings, distance metrics, policy indexation',
+    tag: 'Vector DB',
+    color: 'from-fuchsia-500/20 to-pink-500/10',
+    borderColor: 'hover:border-fuchsia-500/50',
+  },
+  {
+    name: 'LangChain',
+    category: 'Agentic AI & LLM',
+    desc: 'Chains, document loaders, prompt templates, output parsers, memory persistence',
+    tag: 'LLM Framework',
+    color: 'from-violet-500/20 to-purple-500/10',
+    borderColor: 'hover:border-violet-500/50',
+  },
+
+  // --- Backend & Distributed Systems ---
+  {
+    name: 'Node.js & Express 5',
+    category: 'Backend & Systems',
+    desc: 'High-throughput event-driven runtime, modular REST APIs, middleware pipelines',
+    tag: 'Runtime Core',
+    color: 'from-emerald-500/20 to-green-500/10',
+    borderColor: 'hover:border-emerald-500/50',
+  },
+  {
+    name: 'Distributed Systems',
+    category: 'Backend & Systems',
+    desc: 'Microservices architecture, multi-tenancy, idempotency keys, dual-token JWT auth',
+    tag: 'Architecture',
+    color: 'from-cyan-500/20 to-blue-500/10',
+    borderColor: 'hover:border-cyan-500/50',
+  },
+  {
+    name: 'Socket.IO & SSE',
+    category: 'Backend & Systems',
+    desc: 'Low-latency bi-directional WebSockets, Redis Pub/Sub adapter, heartbeat presence, Server-Sent Events',
+    tag: 'Real-Time',
+    color: 'from-amber-500/20 to-orange-500/10',
+    borderColor: 'hover:border-amber-500/50',
+  },
+  {
+    name: 'Event-Driven & Webhooks',
+    category: 'Backend & Systems',
+    desc: 'HMAC-SHA256 signature verification, decoupled async messaging, retry policies',
+    tag: 'Event Driven',
+    color: 'from-blue-500/20 to-indigo-500/10',
+    borderColor: 'hover:border-blue-500/50',
+  },
+  {
+    name: 'System Design (HLD/LLD)',
+    category: 'Backend & Systems',
+    desc: 'High & low level design, DAG engines (3-color DFS, Kahn’s topo sort, CPM), rate limiting',
+    tag: 'Design & DSA',
+    color: 'from-violet-500/20 to-blue-500/10',
+    borderColor: 'hover:border-violet-500/50',
+  },
+
+  // --- Databases & Queues ---
+  {
+    name: 'PostgreSQL & Prisma',
+    category: 'Databases & Queues',
+    desc: 'Relational modeling, indexing, Prisma ORM migrations, ACID guarantees, full-text search',
+    tag: 'SQL & ORM',
+    color: 'from-sky-500/20 to-blue-600/10',
+    borderColor: 'hover:border-sky-500/50',
+  },
+  {
+    name: 'MongoDB Replica Set',
+    category: 'Databases & Queues',
+    desc: 'Multi-document ACID transactions, aggregation pipelines, immutable ledger pre-hooks',
+    tag: 'NoSQL & ACID',
+    color: 'from-green-500/20 to-emerald-500/10',
+    borderColor: 'hover:border-green-500/50',
+  },
+  {
+    name: 'Redis Distributed Locks',
+    category: 'Databases & Queues',
+    desc: 'Distributed mutex locks (SET NX EX), token rotation, pub/sub messaging, session cache',
+    tag: 'Lock & Cache',
+    color: 'from-rose-500/20 to-red-500/10',
+    borderColor: 'hover:border-rose-500/50',
+  },
+  {
+    name: 'BullMQ',
+    category: 'Databases & Queues',
+    desc: 'Persistent background job processing, delayed jobs, worker concurrency, failure retries',
+    tag: 'Job Queues',
+    color: 'from-orange-500/20 to-red-500/10',
+    borderColor: 'hover:border-orange-500/50',
+  },
+  {
+    name: 'MySQL',
+    category: 'Databases & Queues',
+    desc: 'Relational schemas, query optimization, foreign keys, stored procedures',
+    tag: 'Relational DB',
+    color: 'from-blue-600/20 to-cyan-500/10',
+    borderColor: 'hover:border-blue-600/50',
+  },
+
+  // --- Cloud & DevOps ---
+  {
+    name: 'AWS Cloud Services',
+    category: 'Cloud & DevOps',
+    desc: 'AWS ECS Fargate, RDS PostgreSQL, ElastiCache Redis, ALB load balancer, IAM policies',
+    tag: 'AWS Certified',
+    color: 'from-amber-600/20 to-orange-500/10',
+    borderColor: 'hover:border-amber-500/50',
+  },
+  {
+    name: 'Terraform (IaC)',
+    category: 'Cloud & DevOps',
+    desc: 'Infrastructure as Code: 9 modular Terraform architectures for AWS production clusters',
+    tag: 'IaC DevOps',
+    color: 'from-purple-600/20 to-indigo-600/10',
+    borderColor: 'hover:border-purple-600/50',
+  },
+  {
+    name: 'Docker & Containers',
+    category: 'Cloud & DevOps',
+    desc: 'Multi-stage container builds, microservices docker-compose, isolated production environments',
+    tag: 'Containers',
+    color: 'from-blue-500/20 to-cyan-500/10',
+    borderColor: 'hover:border-blue-500/50',
+  },
+  {
+    name: 'Nginx API Gateway',
+    category: 'Cloud & DevOps',
+    desc: 'Reverse proxy, SSL termination, rate limiting, request routing to backend services',
+    tag: 'Gateway & Proxy',
+    color: 'from-emerald-600/20 to-teal-500/10',
+    borderColor: 'hover:border-emerald-600/50',
+  },
+  {
+    name: 'CI/CD & GitHub Actions',
+    category: 'Cloud & DevOps',
+    desc: 'Automated test runners, build pipelines, Vercel & Render continuous deployment',
+    tag: 'CI/CD Pipelines',
+    color: 'from-zinc-500/20 to-zinc-700/10',
+    borderColor: 'hover:border-white/50',
+  },
+
+  // --- Languages & Core ---
+  {
+    name: 'TypeScript',
+    category: 'Languages',
+    desc: 'Strict type safety, generics, interfaces, backend DTO schemas, utility types',
+    tag: 'Type Safety',
+    color: 'from-blue-500/20 to-indigo-500/10',
+    borderColor: 'hover:border-blue-500/50',
+  },
+  {
+    name: 'JavaScript (ES6+)',
+    category: 'Languages',
+    desc: 'Asynchronous event loop, promises, closures, prototypes, modern ECMAScript standards',
+    tag: 'Web Core',
+    color: 'from-amber-500/20 to-yellow-500/10',
+    borderColor: 'hover:border-amber-500/50',
+  },
+  {
+    name: 'Python',
+    category: 'Languages',
+    desc: 'AI orchestration, automation scripts, LLM integrations, data transformation pipelines',
+    tag: 'AI & Scripting',
+    color: 'from-blue-500/20 to-yellow-500/10',
+    borderColor: 'hover:border-blue-400/50',
+  },
+  {
+    name: 'Java',
+    category: 'Languages',
+    desc: 'Object-Oriented Programming, Core Data Structures & Algorithms, JVM principles',
+    tag: 'Core DSA',
+    color: 'from-orange-500/20 to-amber-600/10',
+    borderColor: 'hover:border-orange-500/50',
+  },
+  {
+    name: 'SQL',
+    category: 'Languages',
+    desc: 'Complex joins, subqueries, aggregations, window functions, index planning',
+    tag: 'Query Engine',
+    color: 'from-sky-500/20 to-blue-500/10',
+    borderColor: 'hover:border-sky-500/50',
+  },
+
+  // --- Frontend ---
+  {
+    name: 'React.js 19',
     category: 'Frontend',
-    desc: 'Component Architecture, Hooks, Virtual DOM, React 19',
-    tag: 'Core UI',
+    desc: 'Modern component architecture, custom hooks, Server Actions, suspense & concurrent mode',
+    tag: 'UI Library',
     color: 'from-cyan-500/20 to-blue-500/10',
     borderColor: 'hover:border-cyan-500/50',
   },
   {
     name: 'Next.js',
     category: 'Frontend',
-    desc: 'App Router, Server Components, SSR/SSG, Turbopack',
+    desc: 'App Router, SSR, SSG, Server Components, API routes, Turbopack optimizations',
     tag: 'Framework',
     color: 'from-zinc-500/20 to-zinc-800/10',
     borderColor: 'hover:border-white/50',
   },
   {
-    name: 'TypeScript',
-    category: 'Languages',
-    desc: 'Static Typing, Generics, Type Safety, Strict Mode',
-    tag: 'Type Safety',
-    color: 'from-blue-500/20 to-indigo-500/10',
-    borderColor: 'hover:border-blue-500/50',
-  },
-  {
-    name: 'JavaScript',
-    category: 'Languages',
-    desc: 'ES6+, Async/Await, Event Loop, Closures, DOM APIs',
-    tag: 'Web Core',
-    color: 'from-amber-500/20 to-yellow-500/10',
-    borderColor: 'hover:border-amber-500/50',
-  },
-  {
-    name: 'Node.js',
-    category: 'Backend',
-    desc: 'Event-driven I/O, Express middleware, REST APIs',
-    tag: 'Runtime',
-    color: 'from-emerald-500/20 to-green-500/10',
-    borderColor: 'hover:border-emerald-500/50',
-  },
-  {
-    name: 'PostgreSQL',
-    category: 'Databases',
-    desc: 'Relational Schema, Indexing, Joins, ACID Transactions',
-    tag: 'SQL DB',
-    color: 'from-sky-500/20 to-blue-600/10',
-    borderColor: 'hover:border-sky-500/50',
-  },
-  {
-    name: 'MongoDB',
-    category: 'Databases',
-    desc: 'Document Stores, Aggregation Pipelines, Sharding',
-    tag: 'NoSQL DB',
-    color: 'from-green-500/20 to-emerald-500/10',
-    borderColor: 'hover:border-green-500/50',
-  },
-  {
-    name: 'Mongoose',
-    category: 'Databases',
-    desc: 'Schema Validation, Middleware, Population, Indexing',
-    tag: 'ODM',
-    color: 'from-red-500/20 to-rose-600/10',
-    borderColor: 'hover:border-red-500/50',
-  },
-  {
-    name: 'Redis',
-    category: 'Databases',
-    desc: 'In-memory Caching, Pub/Sub, Session Management, TTL',
-    tag: 'Cache',
-    color: 'from-rose-500/20 to-red-500/10',
-    borderColor: 'hover:border-rose-500/50',
-  },
-  {
-    name: 'Socket.io',
-    category: 'Backend',
-    desc: 'Bi-directional WebSockets, Rooms, Low-Latency Events',
-    tag: 'Real-Time',
-    color: 'from-zinc-500/20 to-slate-600/10',
-    borderColor: 'hover:border-white/50',
-  },
-  {
     name: 'Tailwind CSS',
     category: 'Frontend',
-    desc: 'Utility-first Styling, Responsive Design, Design Tokens',
-    tag: 'Modern UI',
+    desc: 'Utility-first design systems, responsive layouts, dark mode palettes, animations',
+    tag: 'Modern Styling',
     color: 'from-cyan-500/20 to-teal-500/10',
     borderColor: 'hover:border-cyan-400/50',
   },
   {
-    name: 'Firebase',
-    category: 'Backend',
-    desc: 'OAuth Authentication, Firestore, Cloud Functions',
-    tag: 'BaaS & Auth',
-    color: 'from-amber-500/20 to-orange-500/10',
-    borderColor: 'hover:border-amber-500/50',
+    name: 'Zustand & TanStack Query',
+    category: 'Frontend',
+    desc: 'Lightweight client-side state management, async server cache & revalidation',
+    tag: 'State & Cache',
+    color: 'from-purple-500/20 to-pink-500/10',
+    borderColor: 'hover:border-purple-500/50',
+  },
+
+  // --- Testing & Tools ---
+  {
+    name: 'Jest & Supertest',
+    category: 'Testing & Tools',
+    desc: 'Automated unit tests, integration test suites, mocked LLM pipelines (82+ automated tests)',
+    tag: 'Automated Tests',
+    color: 'from-red-500/20 to-rose-500/10',
+    borderColor: 'hover:border-red-500/50',
   },
   {
-    name: 'Java',
-    category: 'Languages',
-    desc: 'Object-Oriented Programming, Core DSA, JVM Performance',
-    tag: 'Core DSA',
-    color: 'from-orange-500/20 to-amber-600/10',
-    borderColor: 'hover:border-orange-500/50',
+    name: 'Autocannon',
+    category: 'Testing & Tools',
+    desc: 'High-concurrency load testing (benchmarked at 5,900 req/s with 0 errors across 96,000 requests)',
+    tag: 'Load Testing',
+    color: 'from-emerald-500/20 to-teal-500/10',
+    borderColor: 'hover:border-emerald-500/50',
   },
   {
-    name: 'Python',
-    category: 'Languages',
-    desc: 'Backend Scripts, AI Pipelines, Data Processing, Automation',
-    tag: 'AI & Scripts',
-    color: 'from-blue-500/20 to-yellow-500/10',
-    borderColor: 'hover:border-blue-400/50',
-  },
-  {
-    name: 'Git',
-    category: 'DevOps',
-    desc: 'Version Control, Branching, Rebasing, Conflict Resolution',
-    tag: 'Git VCS',
+    name: 'Git & GitHub',
+    category: 'Testing & Tools',
+    desc: 'Version control workflows, trunk-based branching, PR reviews, release tagging',
+    tag: 'VCS & Collab',
     color: 'from-orange-600/20 to-red-500/10',
     borderColor: 'hover:border-orange-600/50',
   },
   {
-    name: 'GitHub',
-    category: 'DevOps',
-    desc: 'Open Source, GitHub Actions, CI/CD, Code Reviews',
-    tag: 'CI/CD & Hub',
-    color: 'from-purple-500/20 to-indigo-500/10',
-    borderColor: 'hover:border-purple-500/50',
+    name: 'Postman & Swagger',
+    category: 'Testing & Tools',
+    desc: 'OpenAPI 3.0 specification, live interactive API documentation, endpoint test suites',
+    tag: 'API Tooling',
+    color: 'from-amber-500/20 to-orange-500/10',
+    borderColor: 'hover:border-amber-500/50',
   },
 ];
 
-const CATEGORIES = ['All Stack', 'Frontend', 'Backend', 'Databases', 'Languages', 'DevOps'];
+const CATEGORIES = [
+  'All Stack',
+  'Agentic AI & LLM',
+  'Backend & Systems',
+  'Databases & Queues',
+  'Cloud & DevOps',
+  'Languages',
+  'Frontend',
+  'Testing & Tools'
+];
 
 export default function SkillsMarquee() {
   const [activeCategory, setActiveCategory] = useState('All Stack');
@@ -172,7 +334,7 @@ export default function SkillsMarquee() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-2">
                 <Sparkles className="w-3.5 h-3.5 text-[#B600A8]" />
                 <span className="text-xs font-mono font-bold tracking-wider text-[#B600A8] uppercase">
-                  Technical Arsenal (16 Technologies)
+                  Technical Arsenal ({TECH_STACK.length} Technologies)
                 </span>
               </div>
               <h2 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-kanit font-black tracking-tight text-white uppercase">
@@ -214,7 +376,7 @@ export default function SkillsMarquee() {
                 initial={{ opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.94 }}
-                transition={{ duration: 0.25, delay: index * 0.02 }}
+                transition={{ duration: 0.25, delay: index * 0.015 }}
                 className={`group relative p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#141414] border border-white/10 ${tech.borderColor} hover:bg-[#181818] transition-all duration-200 shadow-md flex flex-col justify-between overflow-hidden`}
               >
                 {/* Background Glow */}

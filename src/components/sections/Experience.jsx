@@ -13,7 +13,9 @@ import {
   CheckCircle2,
   Lock,
   ArrowUpRight,
-  Cloud
+  Cloud,
+  Layers,
+  Code
 } from 'lucide-react';
 import FadeIn from '../motion/FadeIn';
 import ntpcLogo from '../../assets/ntpc-logo.png';
@@ -21,50 +23,48 @@ import zidioLogo from '../../assets/zidio-logo.png';
 
 const EXPERIENCES = [
   {
-    role: 'Full Stack Intern',
+    role: 'Full Stack Intern (On-site)',
     company: 'NTPC (National Thermal Power Corporation)',
-    period: 'June 2026 – July 2026',
+    period: 'Jun 2026 – Jul 2026',
     logo: ntpcLogo,
-    badge: 'Confidential Enterprise Project',
+    badge: 'Enterprise Asset Management',
     badgeType: 'confidential',
     description:
-      'Engineered a QR-based IT Asset Management System tracking enterprise hardware live across hospital, HR, and IT wings.',
+      'Contributed to an IT Asset Management System with QR-code scanning for asset tracking, aimed at improving tracking and operational efficiency.',
     achievements: [
-      'Engineered dynamic QR generation & scanning module for live tracking of enterprise hardware across hospital, HR, and IT wings.',
-      'Designed role-based multi-tier admin dashboards (RBAC) enabling instantaneous inventory lookup and audit approvals.',
-      'Reduced audit overhead by 35% with role-based admin dashboards.',
+      'Contributed to an IT Asset Management System with dynamic QR-code scanning module for hardware asset tracking across departments.',
+      'Built role-based dashboards (RBAC) and audit workflows; contributed to secure relational database schemas and backend APIs.',
     ],
-    tech: ['React.js', 'Node.js', 'Express', 'PostgreSQL', 'QR Engine', 'Docker', 'Role-Based Access Control'],
+    tech: ['React.js', 'Node.js', 'Express', 'PostgreSQL', 'QR Engine', 'Docker', 'RBAC Schemas'],
   },
   {
-    role: 'Full Stack Intern',
+    role: 'Full Stack Intern (Remote)',
     company: 'Zidio Development',
-    period: 'March 2026 – May 2026',
+    period: 'Mar 2026 – May 2026',
     logo: zidioLogo,
     badge: 'AI Meeting SaaS',
     badgeType: 'saas',
     description:
-      'Built IntellMeet: AI-powered meeting system with automated summaries and task extraction pipelines.',
+      'Contributed to IntellMeet, an AI-powered meeting management system, across the frontend and backend.',
     achievements: [
-      'Built IntellMeet: AI-powered meeting system with automated summaries and task extraction pipelines.',
-      'Engineered speech transcription and context summarization pipelines for multi-speaker meetings.',
-      'Created intuitive Next.js web application with searchable meeting archive and instant task exports.',
+      'Contributed to IntellMeet, an AI-powered meeting productivity platform, across the frontend and backend architecture.',
+      'Developed modular REST APIs and asynchronous background pipelines for real-time speech transcription & task extraction.',
     ],
     links: [
       { name: 'Live Demo', url: 'https://intell-meet-zeta.vercel.app' },
       { name: 'GitHub', url: 'https://github.com/vishalkumar2501/intellimeet-zidio-Intern' },
     ],
-    tech: ['Next.js', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'REST APIs'],
+    tech: ['Next.js', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'REST APIs', 'Async Pipelines'],
   },
 ];
 
 const EDUCATION = [
   {
     degree: 'B.Tech in Computer Science & Engineering',
-    institution: 'KIET Group of Institutions',
+    institution: 'KIET Group of Institutions, Ghaziabad',
     period: '2024 – 2028',
-    details: 'Pursuing Bachelor of Technology in Computer Science & Engineering.',
-    highlight: '2024 – 2028',
+    details: 'Core curriculum in Data Structures, Algorithms, Distributed Computing, Database Management, and Operating Systems.',
+    highlight: 'GPA: 8.01 / 10',
   },
   {
     degree: 'Senior Secondary (PCM)',
@@ -197,7 +197,7 @@ export default function Experience() {
         {/* Education & Certification Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
           {/* Education Timeline */}
-          <div className="lg:col-span-8 space-y-3.5">
+          <div className="lg:col-span-7 space-y-3.5">
             <div className="flex items-center gap-2 mb-2">
               <GraduationCap className="w-4 h-4 text-[#B600A8]" />
               <h3 className="text-lg sm:text-xl font-kanit font-bold text-white uppercase tracking-tight">
@@ -230,19 +230,26 @@ export default function Experience() {
             ))}
           </div>
 
-          {/* Certifications Card */}
-          <div className="lg:col-span-4">
+          {/* Certifications & Achievements Card */}
+          <div className="lg:col-span-5 space-y-3.5">
             <div className="flex items-center gap-2 mb-2">
               <Award className="w-4 h-4 text-[#BE4C00]" />
               <h3 className="text-lg sm:text-xl font-kanit font-bold text-white uppercase tracking-tight">
-                Certification
+                Certifications & Achievements
               </h3>
             </div>
 
+            {/* AWS Certification */}
             <FadeIn delay={0.15} direction="up">
               <div className="p-4 sm:p-5 rounded-xl bg-[#141414] border border-[#BE4C00]/30 hover:border-[#BE4C00]/60 transition-all shadow-md relative overflow-hidden">
-                <div className="w-10 h-10 rounded-xl bg-[#1E1610] border border-[#BE4C00]/40 flex items-center justify-center text-[#BE4C00] mb-2.5 shadow-md">
-                  <Cloud className="w-5 h-5" />
+                <div className="flex items-center justify-between mb-2">
+                  <div className="w-9 h-9 rounded-xl bg-[#1E1610] border border-[#BE4C00]/40 flex items-center justify-center text-[#BE4C00] shadow-md">
+                    <Cloud className="w-4 h-4" />
+                  </div>
+                  <span className="text-xs font-mono text-emerald-400 flex items-center gap-1 font-bold">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    Verified
+                  </span>
                 </div>
 
                 <span className="text-[10px] font-mono uppercase tracking-wider text-[#BE4C00] font-bold block mb-0.5">
@@ -252,19 +259,34 @@ export default function Experience() {
                   AWS Certified Cloud Practitioner
                 </h4>
                 <p className="text-[11px] font-mono text-zinc-400 mt-0.5">
-                  Code: CLF-C02
+                  Certification Code: CLF-C02
                 </p>
 
                 <p className="text-xs text-zinc-300 mt-2 leading-relaxed font-sans">
-                  AWS certified foundation covering cloud concepts, security, architecture, compute, networking, and storage.
+                  Core competencies in cloud architecture, security, compute, networking, and distributed systems design.
                 </p>
+              </div>
+            </FadeIn>
 
-                <div className="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-xs font-mono text-emerald-400 flex items-center gap-1 font-bold">
-                    <ShieldCheck className="w-3 h-3" />
-                    Verified Credential
-                  </span>
+            {/* Freelance & Project Delivery Achievement */}
+            <FadeIn delay={0.2} direction="up">
+              <div className="p-4 rounded-xl bg-[#141414] border border-[#B600A8]/30 hover:border-[#B600A8]/60 transition-all shadow-md relative overflow-hidden">
+                <div className="flex items-center gap-2.5 mb-1.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#221022] border border-[#B600A8]/40 flex items-center justify-center text-[#B600A8] shrink-0">
+                    <Code className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#B600A8] font-bold block">
+                      Production Delivery
+                    </span>
+                    <h4 className="text-sm font-kanit font-bold text-white leading-tight">
+                      5+ Freelance Projects Delivered
+                    </h4>
+                  </div>
                 </div>
+                <p className="text-xs text-zinc-300 mt-1 leading-relaxed font-sans">
+                  End-to-end full-stack development, UI/UX systems, scalable backend APIs, and microservices for clients.
+                </p>
               </div>
             </FadeIn>
           </div>

@@ -20,7 +20,7 @@ import heroImg from '../../assets/hero.png';
 
 export default function About() {
   const bioText =
-    "Full Stack Developer with 1+ years of experience across internships and production software. Specialized in React, Next.js, Node.js, Docker, and PostgreSQL, alongside real-time systems and AI integrations. Focused on scalable architectures, high-concurrency engines, and shipping code at real scale.";
+    "Backend-focused Full-Stack Developer (B.Tech CSE) with two internships at NTPC and Zidio, and production projects in distributed systems and agentic AI. Builds scalable REST APIs, multi-tenant backends with Node.js, TypeScript, PostgreSQL, MongoDB, Redis, and autonomous AI agents with LangGraph and RAG. AWS Certified Cloud Practitioner applying robust HLD/LLD system design.";
 
   return (
     <section id="about" className="py-12 md:py-16 relative bg-[#0C0C0C] overflow-hidden">
@@ -49,7 +49,7 @@ export default function About() {
           <p className="font-kanit font-normal text-sm sm:text-lg md:text-xl text-zinc-300 leading-relaxed">
             <AnimatedText
               text={bioText}
-              highlightWords={['Full', 'Stack', 'React,', 'Next.js,', 'Node.js,', 'Docker,', 'PostgreSQL,', 'real-time', 'AI', 'scalable', 'high-concurrency']}
+              highlightWords={['Backend-focused', 'Full-Stack', 'Node.js,', 'TypeScript,', 'PostgreSQL,', 'MongoDB,', 'Redis,', 'LangGraph', 'RAG.', 'AWS', 'Certified', 'HLD/LLD']}
               highlightClass="text-white font-semibold"
             />
           </p>

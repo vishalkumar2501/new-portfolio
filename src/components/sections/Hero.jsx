@@ -107,7 +107,7 @@ export default function Hero({ onOpenScheduleModal }) {
           <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#161616]/90 border border-white/15 backdrop-blur-xl shadow-xl">
             <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
             <span className="text-[11px] sm:text-xs font-mono font-semibold tracking-wider uppercase text-zinc-200 text-center">
-              Full-Stack Developer • React 19 & AI Systems
+              Backend-Focused Full-Stack Developer • Distributed Systems & Agentic AI
             </span>
           </div>
         </FadeIn>
@@ -180,11 +180,11 @@ export default function Hero({ onOpenScheduleModal }) {
               {/* Subtitle */}
               <div className="max-w-lg text-center md:text-left">
                 <p className="text-xs sm:text-sm md:text-base font-kanit font-light tracking-wide uppercase text-zinc-200 leading-relaxed">
-                  A <span className="text-white font-bold">Full-Stack Developer</span> driven by crafting{' '}
+                  A <span className="text-white font-bold">Backend-Focused Developer</span> driven by crafting{' '}
                   <span className="bg-gradient-to-r from-[#BBCCD7] to-white bg-clip-text text-transparent font-semibold">
-                    high-performance applications
+                    distributed microservices & ACID ledgers
                   </span>{' '}
-                  & scalable AI workflows.
+                  & autonomous LangGraph AI workflows.
                 </p>
               </div>
 
