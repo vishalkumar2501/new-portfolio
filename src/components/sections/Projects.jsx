@@ -21,6 +21,7 @@ import chatlightImg from '../../assets/chatlight.png';
 const PROJECTS = [
   {
     title: 'TeamOS – Real-Time Distributed Workspace & AI Platform',
+    titleGradient: 'from-sky-400 via-cyan-300 to-blue-400',
     category: 'Distributed Systems & AI',
     period: 'Production Platform',
     image: teamosImg,
@@ -44,6 +45,7 @@ const PROJECTS = [
   },
   {
     title: 'VaultX – Distributed Core Banking & Immutable Ledger System',
+    titleGradient: 'from-emerald-400 via-teal-300 to-green-400',
     category: 'Core Banking & FinTech',
     period: 'High-Concurrency Engine',
     image: null,
@@ -66,6 +68,7 @@ const PROJECTS = [
   },
   {
     title: 'Autonomous Agentic Customer Support Service – AI Support Backend',
+    titleGradient: 'from-fuchsia-400 via-purple-300 to-pink-400',
     category: 'Agentic AI & Distributed Backend',
     period: 'Production API',
     image: autonomousSupportImg,
@@ -89,6 +92,7 @@ const PROJECTS = [
   },
   {
     title: 'DocBook — Healthcare & Appointment Platform',
+    titleGradient: 'from-blue-400 via-sky-300 to-indigo-300',
     category: 'Healthcare SaaS',
     period: 'Full-Stack Platform',
     image: docbookImg,
@@ -112,6 +116,7 @@ const PROJECTS = [
   },
   {
     title: 'IntellMeet (AI Meeting Productivity SaaS)',
+    titleGradient: 'from-rose-400 via-pink-400 to-purple-400',
     category: 'AI Meeting SaaS',
     period: 'Production SaaS',
     image: intellmeetImg,
@@ -134,6 +139,7 @@ const PROJECTS = [
   },
   {
     title: 'Chatlight (Real-Time Communication Platform)',
+    titleGradient: 'from-teal-400 via-emerald-300 to-cyan-400',
     category: 'Real-Time WebSockets',
     period: 'Instant Messaging',
     image: chatlightImg,
@@ -155,6 +161,7 @@ const PROJECTS = [
   },
   {
     title: 'Obys Agency (Creative Interactive Experience)',
+    titleGradient: 'from-amber-400 via-orange-300 to-yellow-400',
     category: 'Creative Interactive Clone',
     period: 'Interactive Canvas',
     image: null,
@@ -263,8 +270,8 @@ function ProjectCard({ project, index, total, targetScale }) {
                 </span>
               </div>
 
-              {/* Title */}
-              <h3 className="text-base sm:text-lg md:text-xl font-kanit font-black text-white tracking-tight leading-snug mb-1.5">
+              {/* Chatakdaar Vibrant Title */}
+              <h3 className={`text-base sm:text-lg md:text-xl font-kanit font-black tracking-tight leading-snug mb-1.5 bg-gradient-to-r ${project.titleGradient} bg-clip-text text-transparent filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]`}>
                 {project.title}
               </h3>
 
@@ -339,7 +346,7 @@ function ProjectCard({ project, index, total, targetScale }) {
                   <div className="w-3" />
                 </div>
 
-                {/* 100% UNCLIPPED SCREENSHOT CONTAINER (object-contain so all sidebars and edges are clearly visible) */}
+                {/* 100% UNCLIPPED SCREENSHOT CONTAINER */}
                 <div className="w-full aspect-[16/10] bg-[#0A0A0A] flex items-center justify-center p-1 sm:p-2 overflow-hidden">
                   <img
                     src={project.image}

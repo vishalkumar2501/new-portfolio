@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { name: 'Contact', href: '#contact' },
 ];
 
-const RESUME_URL = 'https://drive.google.com/file/d/1RGIanSRAHg0oxmK7V62QsV-x7J8LI2ir/view?usp=sharing';
+const RESUME_URL = 'https://drive.google.com/file/d/1Zp_ONSLr3JuM8fnxXqCDX-WTHMcyDN3D/view?usp=sharing';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,13 +42,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3.5 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2.5 sm:py-3 ${
           isScrolled
-            ? 'backdrop-blur-xl bg-[#0C0C0C]/85 border-b border-white/10 shadow-2xl py-2.5 sm:py-3'
+            ? 'backdrop-blur-xl bg-[#0C0C0C]/85 border-b border-white/10 shadow-2xl py-2 sm:py-2.5'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-[1100px] mx-auto flex items-center justify-between">
+        <div className="max-w-[1040px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
           {/* Brand Logo */}
           <Magnet padding={60} strength={2}>
             <a

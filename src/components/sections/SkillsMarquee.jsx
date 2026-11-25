@@ -298,6 +298,27 @@ const CATEGORIES = [
   'Testing & Tools'
 ];
 
+const getCategoryTextColor = (category) => {
+  switch (category) {
+    case 'Agentic AI & LLM':
+      return 'text-purple-300 group-hover:text-purple-100';
+    case 'Backend & Systems':
+      return 'text-emerald-300 group-hover:text-emerald-100';
+    case 'Databases & Queues':
+      return 'text-sky-300 group-hover:text-sky-100';
+    case 'Cloud & DevOps':
+      return 'text-amber-300 group-hover:text-amber-100';
+    case 'Languages':
+      return 'text-yellow-300 group-hover:text-yellow-100';
+    case 'Frontend':
+      return 'text-cyan-300 group-hover:text-cyan-100';
+    case 'Testing & Tools':
+      return 'text-rose-300 group-hover:text-rose-100';
+    default:
+      return 'text-white';
+  }
+};
+
 export default function SkillsMarquee() {
   const [activeCategory, setActiveCategory] = useState('All Stack');
 
@@ -379,7 +400,7 @@ export default function SkillsMarquee() {
                     </span>
                   </div>
 
-                  <h3 className="text-xs sm:text-sm font-kanit font-extrabold text-white tracking-tight group-hover:text-[#BBCCD7] transition-colors leading-snug">
+                  <h3 className={`text-xs sm:text-sm font-kanit font-black tracking-tight ${getCategoryTextColor(tech.category)} transition-colors leading-snug`}>
                     {tech.name}
                   </h3>
                 </div>

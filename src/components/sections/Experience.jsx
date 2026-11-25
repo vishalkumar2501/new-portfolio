@@ -24,6 +24,7 @@ const AWS_CERTIFICATE_URL = 'https://drive.google.com/file/d/17NDcDM7N_SUGZe7MX_
 const EXPERIENCES = [
   {
     role: 'Full Stack Intern (On-site)',
+    roleGradient: 'from-sky-400 via-cyan-300 to-blue-400',
     company: 'NTPC (National Thermal Power Corporation)',
     period: 'Jun 2026 – Jul 2026',
     logo: ntpcLogo,
@@ -39,6 +40,7 @@ const EXPERIENCES = [
   },
   {
     role: 'Full Stack Intern (Remote)',
+    roleGradient: 'from-fuchsia-400 via-pink-400 to-purple-400',
     company: 'Zidio Development',
     period: 'Mar 2026 – May 2026',
     logo: zidioLogo,
@@ -61,6 +63,7 @@ const EXPERIENCES = [
 const EDUCATION = [
   {
     degree: 'B.Tech in Computer Science & Engineering',
+    degreeGradient: 'from-amber-300 via-yellow-200 to-amber-400',
     institution: 'KIET Group of Institutions, Ghaziabad',
     period: '2024 – 2028',
     details: 'Core curriculum in Data Structures, Algorithms, Distributed Computing, Database Management, and Operating Systems.',
@@ -68,6 +71,7 @@ const EDUCATION = [
   },
   {
     degree: 'Senior Secondary (PCM)',
+    degreeGradient: 'from-emerald-300 via-teal-200 to-emerald-400',
     institution: 'Kendriya Vidyalaya NTPC Rihand Nagar',
     period: '2021 – 2023',
     details: 'Completed Senior Secondary education with Physics, Chemistry, and Mathematics.',
@@ -133,7 +137,9 @@ export default function Experience() {
                           </span>
                         )}
                       </div>
-                      <h3 className="text-base sm:text-lg font-kanit font-extrabold text-white tracking-tight">
+
+                      {/* Chatakdaar Vibrant Role Title */}
+                      <h3 className={`text-base sm:text-lg font-kanit font-black tracking-tight bg-gradient-to-r ${exp.roleGradient} bg-clip-text text-transparent filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]`}>
                         {exp.role}
                       </h3>
                       <div className="text-[11px] font-kanit font-semibold text-zinc-300 flex items-center gap-1.5 mt-0.5">
@@ -215,7 +221,9 @@ export default function Experience() {
                       {edu.highlight}
                     </span>
                   </div>
-                  <h4 className="text-xs sm:text-sm font-kanit font-bold text-white">
+
+                  {/* Chatakdaar Degree Title */}
+                  <h4 className={`text-xs sm:text-sm font-kanit font-black tracking-tight bg-gradient-to-r ${edu.degreeGradient} bg-clip-text text-transparent`}>
                     {edu.degree}
                   </h4>
                   <p className="text-[11px] font-kanit font-semibold text-zinc-300 mt-0.5">
@@ -260,7 +268,7 @@ export default function Experience() {
                   Amazon Web Services (AWS)
                 </span>
                 <div className="flex items-center justify-between">
-                  <h4 className="text-xs sm:text-sm font-kanit font-bold text-white leading-tight group-hover/aws:text-[#FFA116] transition-colors">
+                  <h4 className="text-xs sm:text-sm font-kanit font-black tracking-tight bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-300 bg-clip-text text-transparent leading-tight group-hover/aws:text-[#FFA116] transition-colors">
                     AWS Certified Cloud Practitioner
                   </h4>
                   <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover/aws:text-[#FFA116] group-hover/aws:translate-x-0.5 group-hover/aws:-translate-y-0.5 transition-transform" />
@@ -286,7 +294,7 @@ export default function Experience() {
                     <span className="text-[9px] font-mono uppercase tracking-wider text-[#B600A8] font-bold block">
                       Production Delivery
                     </span>
-                    <h4 className="text-xs sm:text-sm font-kanit font-bold text-white leading-tight">
+                    <h4 className="text-xs sm:text-sm font-kanit font-black tracking-tight bg-gradient-to-r from-fuchsia-400 via-pink-300 to-purple-400 bg-clip-text text-transparent leading-tight">
                       5+ Freelance Projects Delivered
                     </h4>
                   </div>

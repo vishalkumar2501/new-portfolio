@@ -18,7 +18,7 @@ import confetti from 'canvas-confetti';
 import FadeIn from '../motion/FadeIn';
 import Magnet from '../motion/Magnet';
 
-const RESUME_URL = 'https://drive.google.com/file/d/1RGIanSRAHg0oxmK7V62QsV-x7J8LI2ir/view?usp=sharing';
+const RESUME_URL = 'https://drive.google.com/file/d/1Zp_ONSLr3JuM8fnxXqCDX-WTHMcyDN3D/view?usp=sharing';
 const EMAIL_ADDRESS = 'vishalkumar2501kvs@gmail.com';
 const PHONE_NUMBER = '+91 7232984199';
 const WEB3FORMS_ACCESS_KEY = 'bd98e02c-d134-461f-97bd-cff28a39a629';

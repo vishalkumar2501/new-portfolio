@@ -3,18 +3,18 @@ import Lenis from 'lenis';
 
 /**
  * SmoothScroll Component
- * Top-tier 60/120fps smooth scrolling with natural momentum and zero jank.
+ * Optimized for immediate responsive trackpad & wheel momentum without lag.
  */
 export default function SmoothScroll({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.05,
+      duration: 0.6,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.2,
+      touchMultiplier: 1.8,
       syncTouch: false,
       infinite: false,
     });
